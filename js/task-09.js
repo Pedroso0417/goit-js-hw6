@@ -1,29 +1,19 @@
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}`;
+    .padStart(6, "0")}`;
 }
 
-function changeBackgroundColor() {
-  const randomColor = getRandomHexColor();
-
-  const body = document.body;
-
-  body.style.backgroundColor = randomColor;
-
+document.addEventListener("click", function () {
+  const bodyElement = document.body;
   const colorSpan = document.querySelector(".color");
-  colorSpan.textContent = randomColor;
-}
+  const changeColorButton = document.querySelector(".change-color");
 
-// function changeBackgroundColor() {
-//   const colors = ["#ff5733", "#33ff57", "#5733ff", "#ff5733", "#33ff57"];
+  changeColorButton.addEventListener("click", function () {
+    const randomColor = getRandomHexColor();
 
-//   const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    bodyElement.style.backgroundColor = randomColor;
 
-//   const body = document.body;
-
-//   body.style.backgroundColor = randomColor;
-
-//   const colorSpan = document.querySelector(".color");
-//   colorSpan.textContent = randomColor;
-// }
+    colorSpan.textContent = randomColor;
+  });
+});

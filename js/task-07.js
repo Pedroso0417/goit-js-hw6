@@ -1,4 +1,4 @@
-document.addEventListener("range", function () {
+document.addEventListener("input", function () {
   const fontSizeControl = document.getElementById("font-size-control");
   const textSpan = document.getElementById("text");
 

@@ -1,13 +1,12 @@
-const inputElemaent = document.getElementById("name-input");
-const inputElement = document.getElementById("name-ouput");
+const inputElement = document.getElementById("name-input");
+const outputElement = document.getElementById("name-output");
 const outputElementContent = outputElement.textContent;
 
 inputElement.addEventListener("input", handleInput);
 
-const handleInput = (event) => {
-  let inputValidation = evnt.currenTarget.value
-    ? event.cuttentTarget.value
+function handleInput(event) {
+  let inputValidation = event.currentTarget.value
+    ? event.currentTarget.value
     : "Anonymous";
-
-  return inputValidation;
-};
+  outputElement.textContent = inputValidation;
+}
